@@ -1,0 +1,5 @@
+var todos = ['item1', 'item2', 'item3'] // array
+console.log('My ToDos:', todos) // print function + concatenation of string + variable
+todos.push('item4', 'item5') // add strings to the end of array
+todos[4] = 'BIGITEM5' // change existing todo by selecting position
+todos.splice(2, 1) // delete item from array at (position, number of items)
