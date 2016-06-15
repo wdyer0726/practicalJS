@@ -1,0 +1,39 @@
+// ver 1
+var todos = ['item1', 'item2', 'item3'] // array
+console.log('My ToDos:', todos) // print function + concatenation of string + variable
+todos.push('item4', 'item5') // add strings to the end of array
+todos[4] = 'BIGITEM5' // change existing todo by selecting position
+todos.splice(2, 1) // delete item from array at (position, number of items)
+// end of ver 1
+
+
+//ver 2 functions
+
+// function <title>() { ## can also include a variable in the parentheses e.g. function <title>(variable) {
+// <line>;
+// <line>;
+//}
+// call function using <title>()
+
+function displayTodos() {  // defining a function for displaying the todos list with console.log
+  console.log('My ToDos:', todos);
+}
+displayTodos() // to run the function <functionname>()
+
+function addTodo(todo) {  //add variable todo to todos list and display new list using displayTodos function
+  todos.push(todo);
+  displayTodos();
+}
+addTodo('IMPORTANTITEM') // item added in parentheses to define new todo variable
+
+function changeTodo(pos, newValue) { // function to change an existing todo(newitem) at specific position (pos)
+  todos[pos] = newValue;
+  displayTodos();
+}
+changeTodo(0,'superitem1')
+
+function deleteTodo(pos) { // delete 1 item from todos at position (pos)
+  todos.splice(pos, 1);
+  displayTodos();
+}
+deleteTodo(0)
