@@ -59,3 +59,29 @@ deleteTodo(0)
 //    console.log(this.name)      //this.name calls property 'name' from the object alex 
 //  }
 //}
+
+// define a method to display todos
+
+var todoList = {
+  todos: ['item1', 'item2', 'item3'],
+  displayTodos: function() {
+    console.log('My Todos:', this.todos);
+  },
+  addTodo: function(todo) { // addTodo method to add to todo list
+    this.todos.push(todo);   //adds to todos in object todoList
+    this.displayTodos();
+  },
+  changeTodo: function(pos, newValue) { //add method to change todo in todo list
+    this.todos[pos] = newValue;
+    this.displayTodos();
+  },
+  deleteTodo: function(pos) {
+    this.todos.splice(pos, 1);// method to delete a todo
+    this.displayTodos();
+  }
+}
+
+//todoList.displayTodos() to display todo list
+//todoList.addTodo('item') to add to todo list
+//todoList.changeTodo(0, 'item9') to change todo to 'item9' at position 0
+//todoList.deleteTodo(0) to delete todo at position 0
