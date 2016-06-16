@@ -1,0 +1,61 @@
+//ver 2 functions
+
+var todos = ['item1', 'item2', 'item3'] // array
+
+// defining a function for displaying the todos list with console.log
+function displayTodos() {  
+  console.log('My ToDos:', todos);
+}
+displayTodos() // to run the function <functionname>()
+
+//add variable todo to todos list and display new list using displayTodos function
+function addTodo(todo) {  
+  todos.push(todo);
+  displayTodos();
+}
+addTodo('IMPORTANTITEM') // item added in parentheses to define new todo variable
+
+// function to change an existing todo(newitem) at specific position (pos)
+function changeTodo(pos, newValue) { 
+  todos[pos] = newValue;
+  displayTodos();
+}
+changeTodo(0,'superitem1')
+
+// delete 1 item from todos at position (pos)
+function deleteTodo(pos) { 
+  todos.splice(pos, 1);
+  displayTodos();
+}
+deleteTodo(0)
+
+
+
+
+// Ver 3 Objects
+// Objects are used to group related data and functions
+
+// Object format/syntax 
+//{
+//  name: 'value/data',
+//  name: 'value/data',
+//  name: 'value/data'
+// }
+
+// can assign as a variable 
+//var variableName = {
+//  dataName1: 'value/data1',
+//  dataName2: 'value/data2',
+//  functionName1: function()
+// }
+//can call specific items from object
+// variableName.dataName1
+// "value/data1"
+
+// can place functions in objects // calling 'this' in a function inside an object refers to the entire object its located in
+// var alex = {
+//  name: 'Alex'
+//  sayName: function(){          // called a method: a property that calls a function on an object
+//    console.log(this.name)      //this.name calls property 'name' from the object alex 
+//  }
+//}
