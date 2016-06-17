@@ -1,0 +1,35 @@
+// ver 4 Booleans
+// remove items from todos because we are replacing simple text with objects
+// replace todos in addTodo with todoText and 
+//create an object inside of this.todos.push for todoText with a boolean
+
+//todoList.addTodo('') to add to object list in todos
+
+var todoList = {
+  todos: [],
+  displayTodos: function() {
+    console.log('My Todos:', this.todos);
+  },
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText, 
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(pos, todoText) { 
+    this.todos[pos].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(pos) {
+    this.todos.splice(pos, 1);
+    this.displayTodos();
+  },
+  toggleCompleted: function(pos) {
+    var todo = this.todos[pos];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  }
+}
+
+
