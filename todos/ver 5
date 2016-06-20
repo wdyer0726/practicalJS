@@ -1,0 +1,55 @@
+// ver 5 loops
+// syntax for (initilization [ie i=0], condition[ while i < 3], final-expression [i += 1])
+// e.g. for (var i = 0; i < 3; i++) {     // [i=i+1 == i++]
+//            console.log("hey"); 
+//}
+// e.g. for (var i = 0; i < 3; i++) {     // [i=i+1 == i++]
+//            console.log(i); 
+//}
+// var testArray = ['item1', 'item2','item3']
+// e.g. for (var i = 0; i < testArray.length; i++) {     // [i=i+1 == i++]
+//            console.log(testArray[i]); 
+//}
+// prints out testArray while is less than the length of testArray
+// if (this.todos.length === 0) {} else {}
+
+
+var todoList = {
+  todos: [],
+  displayTodos: function() {
+    if (this.todos.length === 0) {
+      console.log('Your todo list is empty!');
+    } else {
+      console.log('My Todos:');
+      for (var i = 0; i < this.todos.length; i++) { // while i is less than the length of todos list. will print out todos
+        if (this.todos[i].completed === true) {
+          console.log('(x)', this.todos[i].todoText);  //prints (x) if completed else prints ( )
+        } else {
+          console.log('( )', this.todos[i].todoText);
+        }
+      }
+    }
+  },
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText, 
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(pos, todoText) { 
+    this.todos[pos].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(pos) {
+    this.todos.splice(pos, 1);
+    this.displayTodos();
+  },
+  toggleCompleted: function(pos) {
+    var todo = this.todos[pos];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  }
+}
+
+
